@@ -16,7 +16,8 @@
   "license": "MIT",
   "dependencies": {
     "path": "^0.12.7",
-    "rafify": "^1.0.0"
+    "rafify": "^1.0.0",
+    "random-access-key-value": "^0.1.0"
   },
   "devDependencies": {
     "hyperdb": "^3.3.0",
