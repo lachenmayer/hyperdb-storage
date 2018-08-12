@@ -1,12 +1,25 @@
 {
   "name": "hyperdb-storage",
   "version": "1.0.0",
-  "description": "",
+  "description": "Use a hyperdb as a storage backend for Dat, or any other hyper*-structure (eg. hypercore, hyperdrive, hypertrie).",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test.js"
   },
-  "keywords": [],
+  "keywords": [
+    "hyperdb",
+    "random-access-storage",
+    "dat",
+    "hypercore"
+  ],
   "author": "harry lachenmayer <harrylachenmayer@gmail.com>",
-  "license": "ISC"
+  "license": "MIT",
+  "dependencies": {
+    "rafify": "^1.0.0"
+  },
+  "devDependencies": {
+    "hyperdb": "^3.3.0",
+    "random-access-memory": "^3.0.0",
+    "tape": "^4.9.1"
+  }
 }
