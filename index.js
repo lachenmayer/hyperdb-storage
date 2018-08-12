@@ -1,3 +1,4 @@
+const path = require('path')
 const rafify = require('rafify')
 const rakv = require('random-access-key-value')
 
@@ -18,8 +19,9 @@ module.exports = function hyperdbStorage(db, prefix, storageOverrides = {}) {
     })
   }
   return file => {
-    if (file in storageOverrides) {
-      return rafify(storageOverrides[file])
+    const filename = path.basename(file)
+    if (filename in storageOverrides) {
+      return rafify(storageOverrides[filename])(file)
     }
     return rakv(
       { get, put: db.put.bind(db), batch: db.batch.bind(db) },

@@ -1,4 +1,5 @@
 const test = require('tape')
+const hypercore = require('hypercore')
 const hyperdb = require('hyperdb')
 const ram = require('random-access-memory')
 
@@ -30,5 +31,27 @@ test('works with firstNode conflict resolution', t => {
       t.deepEqual(node.value, { some: 'value' })
       t.end()
     })
+  })
+})
+
+test('storage overrides work', t => {
+  const db = hyperdb(ram)
+  const stores = {}
+  const testStorage = file => {
+    const storage = ram()
+    stores[file] = storage
+    return storage
+  }
+  const nestedDb = hyperdb(
+    storage(db, 'nested', {
+      key: testStorage,
+      secret_key: testStorage,
+    }),
+    { valueEncoding: 'json' }
+  )
+  nestedDb.on('ready', () => {
+    t.true('source/key' in stores, 'key uses storage override')
+    t.true('source/secret_key' in stores, 'secret_key uses storage override')
+    t.end()
   })
 })

@@ -15,6 +15,7 @@
   "author": "harry lachenmayer <harrylachenmayer@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "path": "^0.12.7",
     "rafify": "^1.0.0"
   },
   "devDependencies": {
