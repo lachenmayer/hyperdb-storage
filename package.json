@@ -1,6 +1,6 @@
 {
   "name": "hyperdb-storage",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Use a hyperdb as a storage backend for Dat, or any other hyper*-structure (eg. hypercore, hyperdrive, hypertrie).",
   "main": "index.js",
   "scripts": {
