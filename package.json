@@ -6,6 +6,10 @@
   "scripts": {
     "test": "node test.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lachenmayer/hyperdb-storage"
+  },
   "keywords": [
     "hyperdb",
     "random-access-storage",

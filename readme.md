@@ -1,7 +1,9 @@
 # hyperdb-storage
 
 
-> Use a [hyperdb](https://npm.im/hyperdb) as a storage backend for any hyper*-structure (eg. [hypercore](https://npm.im/hypercore), [hyperdrive](https://npm.im/hyperdrive), [hypertrie](https://npm.im/hypertrie)).
+> Use a [hyperdb](https://npm.im/hyperdb) as a storage backend for [Dat](https://datproject.org), or any other hyper*-structure (eg. [hypercore](https://npm.im/hypercore), [hyperdrive](https://npm.im/hyperdrive), [hypertrie](https://npm.im/hypertrie)).
+
+Note: this is a pretty experimental package, it's unclear if this is actually useful - I intended this as a way of sharing hypercore keys between devices, but there are probably better solutions for this now.
 
 ```
 npm i hyperdb-storage
@@ -62,7 +64,6 @@ hyperdb('my.db', {
 ```
 
 If you don't use either of these, and more than one node is found for a given key, this module will emit a warning and use the first node.
-
 
 ## Contribute
 
